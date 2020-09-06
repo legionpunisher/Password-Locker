@@ -58,5 +58,32 @@ class TestUser (unittest.TestCase):
         self.new_credential.delete_credential()
         self.assertEqual(len(Credential.credential_list),1)   
         
+    #Fifth Test   
+    def test_find_credential_by_account(self):
+         
+        '''
+        test to check if we can find a credential by account and display information
+        '''
+
+        self.new_credential.save_credential()
+        test_credential = Credential("Test","falcon456","duolingo") 
+        test_credential.save_credential()
+
+        found_credential = Credential.find_by_account("duolingo")
+        self.assertEqual(found_credential.username,test_credential.username) 
+    
+    def test_credential_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the credentials.
+        '''
+
+        self.new_credential.save_credential()
+        test_credential = Credential("legionpunisher","Test","duolingo") 
+        test_credential.save_credential()
+
+        credential_exists = Credential.credential_exist("duolingo")
+
+        self.assertTrue(credential_exists)
+    
 if __name__ == '__main__':
     unittest.main()      
