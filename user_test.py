@@ -29,7 +29,7 @@ class TestUser (unittest.TestCase):
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)  
 
-    
+    #Third Test
     def tearDown (self):
         '''
         tearDown method that does clean up after each test case has run.
