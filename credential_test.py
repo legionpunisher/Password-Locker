@@ -84,6 +84,14 @@ class TestUser (unittest.TestCase):
         credential_exists = Credential.credential_exist("duolingo")
 
         self.assertTrue(credential_exists)
+        
+    def test_display_all_credentials (self):
+        '''
+        method that returns a list of all credentials saved
+        '''
+        self.assertEqual(Credential.display_credentials(),Credential.credential_list)
+
+        return False
     
 if __name__ == '__main__':
     unittest.main()      
