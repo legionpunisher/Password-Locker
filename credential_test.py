@@ -16,7 +16,18 @@ class TestUser (unittest.TestCase):
         test_init test case to test if the object is initialized properly
         """
         
-        self.assertEqual(self.new_credential.username,"Moses")
+        self.assertEqual(self.new_credential.username,"legionpunisher")
         self.assertEqual(self.new_credential.password,"shadow521")
         self.assertEqual(self.new_credential.account,"Facebook")
         
+    #Second Test
+    
+    def test_save_credential(self):
+        """
+        test_save_credential test case to test if the credential object is saved into the credential list
+        """
+        self.new_credential.save_credential()
+        self.assertEqual(len(Credential.credential_list),1)  
+ 
+if __name__ == '__main__':
+    unittest.main()      
