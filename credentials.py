@@ -1,3 +1,4 @@
+import pyperclip
 class Credential:
     """
     Class that generates new instances of credentials
@@ -56,3 +57,4 @@ class Credential:
         method that returns the credential list
         '''
         return cls.credential_list
+    

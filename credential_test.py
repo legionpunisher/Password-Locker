@@ -1,5 +1,6 @@
 import unittest
 from credentials import Credential
+import pyperclip
 
 class TestUser (unittest.TestCase):
     """
@@ -90,8 +91,6 @@ class TestUser (unittest.TestCase):
         method that returns a list of all credentials saved
         '''
         self.assertEqual(Credential.display_credentials(),Credential.credential_list)
-
-        return False
-    
+        
 if __name__ == '__main__':
     unittest.main()      
