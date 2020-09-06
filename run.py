@@ -31,3 +31,40 @@ def check_existing_user(number):
     Function that check if a user exists with that number and return a Boolean
     '''
     return User.user_exist(number)
+
+def create_credential(username,password,account):
+    '''
+    Function to create a new credential
+    '''
+    new_credential= Credential(username,password,account)
+    return new_credential
+
+def save_credentials(credential):
+    '''
+    Function to save credential
+    '''
+    credential.save_credentials()
+    
+def del_credential(credential):
+    '''
+    Function to delete a credential
+    '''
+    credential.delete_credential()
+    
+def find_credential(account):
+    '''
+    Function that finds a credential by account and returns the credential
+    '''
+    return Credential.find_by_account(account)
+
+def check_existing_credentials(account):
+    '''
+    Function that check if a credential exists with that account and return a Boolean
+    '''
+    return Credential.credential_exist(account)
+
+def display_credentials():
+    '''
+    Function that returns all the saved credentials
+    '''
+    return Credential.display_credentials()
